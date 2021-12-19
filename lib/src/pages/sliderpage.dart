@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class SliderPage extends StatefulWidget {
@@ -79,27 +77,12 @@ class _SliderPageState extends State<SliderPage> {
               alignment: Alignment.center,
             ),
           ),
-          /*
-          FadeInImage(
-            placeholder: AssetImage('assets/loading.gif'),
-            image: AssetImage('assets/G2_Logo.png'),
-            fadeInDuration: Duration(milliseconds: 200),
-          ),*/
         ],
       )),
-      /*
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.auto_awesome),
-        onPressed: () {
-          Navigator.pop(context);
-        },
-      ),*/
     );
   }
 
   void _sliderMobil(double newValue) {
-    final random = Random();
-
     setState(() {
       valorSlider = newValue;
     });
