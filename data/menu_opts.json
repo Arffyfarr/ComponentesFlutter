@@ -25,6 +25,11 @@
             "ruta" : "slider",
             "icon" : "tune",
             "texto": "Slider-Checks"
+        },
+        {
+            "ruta" : "input",
+            "icon" : "input",
+            "texto": "Inputs"
         }
     ]
 }

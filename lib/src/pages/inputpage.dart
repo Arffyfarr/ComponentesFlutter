@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 class InputPage extends StatefulWidget {
   InputPage({Key? key}) : super(key: key);
@@ -12,7 +13,11 @@ class _InputPageState extends State<InputPage> {
   String nombre = '';
   int totalNom = 0;
   String email = '';
+  DateTime now = new DateTime.now();
+  DateTime? _dateTime;
+  dynamic fecha = '15/12/1999';
   final myController = TextEditingController();
+  final controllerFecha = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,6 +98,50 @@ class _InputPageState extends State<InputPage> {
                 icon: Icon(Icons.calendar_today),
                 suffixIcon: Icon(Icons.perm_contact_calendar_rounded),
               ),
+              readOnly: true,
+              controller: controllerFecha,
+              onTap: () async {
+                DateTime? picked = await showDatePicker(
+                  context: context,
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime(1939, 9, 1),
+                  lastDate: DateTime(now.year, now.month, now.day),
+                );
+                /*setState(() {
+                  controllerFecha.text = fecha;
+                });*/
+                if (picked != null) {
+                  setState(() {
+                    fecha = picked.toString();
+                    controllerFecha.text = fecha;
+                  });
+                } else {
+                  print('No va');
+                }
+                setState(() {});
+                /*
+                setState(() {
+                  _dateTime;
+                });*/
+                /*DatePicker.showDatePicker(context,
+                    showTitleActions: true,
+                    minTime: DateTime(1939, 9, 1),
+                    maxTime: DateTime(now.year, now.month, now.day),
+                    onChanged: (date) {
+                  //print('change $date');
+                }, onConfirm: (date) {
+                  setState(() {});
+                  //print('confirm $date');
+                }, currentTime: DateTime.now(), locale: LocaleType.es);*/
+              },
+              /*
+              onChanged: (dynamic val) {
+                val = _dateTime;
+                setState(() {});
+              },*/
+              /*onEditingComplete: () {
+                setState(() {});
+              },*/
             ),
             Padding(padding: EdgeInsets.only(top: 20)),
             Row(

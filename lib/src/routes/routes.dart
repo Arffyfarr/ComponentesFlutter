@@ -5,7 +5,9 @@ import 'package:componentes/src/pages/homepagetemp.dart';
 import 'package:componentes/src/pages/cardpage.dart';
 import 'package:componentes/src/pages/animated_container.dart';
 import 'package:componentes/src/pages/sliderpage.dart';
+import 'package:componentes/src/pages/inputpage.dart';
 
+//Rutes
 Map<String, Widget Function(BuildContext)> getApplicationRoutes() {
   return <String, Widget Function(BuildContext)>{
     '/': (BuildContext context) => HomePageTemp(),
@@ -14,5 +16,6 @@ Map<String, Widget Function(BuildContext)> getApplicationRoutes() {
     'card': (BuildContext context) => CardPage(),
     'animatedContainer': (BuildContext context) => AnimatedContainerPage(),
     'slider': (BuildContext context) => SliderPage(),
+    'input': (BuildContext context) => InputPage(),
   };
 }
